@@ -46,10 +46,13 @@ const Profile = ({ user }) => {
               <a href='/update-profile'>Perfil</a>
             </li>
             <li>
-              <a>Pedido</a>
+              <a href='/order'>Pedido</a>
             </li>
             <li>
-              <a>Configurações</a>
+              <Link to='/dashboard'>Dashboard</Link>
+            </li>
+            <li>
+              <Link to='/dashboard'>Configurações</Link>
             </li>
             <li>
               <a onClick={handleLogout}>Sair</a>

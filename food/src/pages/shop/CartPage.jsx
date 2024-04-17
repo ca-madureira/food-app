@@ -3,6 +3,7 @@ import useCart from '../../hooks/useCart'
 import Swal from 'sweetalert2'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthProvider'
+import { useState, useEffect } from 'react'
 
 const CartPage = () => {
   const [cart, refetch] = useCart()
@@ -68,10 +69,11 @@ const CartPage = () => {
     }
   }
 
-  const cartSubtotal = cart.reduce((total, item) => {
+  const cartSubTotal = cart.reduce((total, item) => {
     return total + calculatePrice(item)
   }, 0)
 
+  const orderTotal = cartSubTotal
   const handleDelete = (item) => {
     Swal.fire({
       title: 'Você tem certeza?',
@@ -175,31 +177,23 @@ const CartPage = () => {
                 </tr>
               ))}
             </tbody>
-            {/* foot */}
-            <tfoot>
-              <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Job</th>
-                <th>Favorite Color</th>
-                <th></th>
-              </tr>
-            </tfoot>
           </table>
         </div>
       </div>
       <div className='my-12 flex flex-col md:flex-row justify-between items-start'>
         <div className='md:w-1/2 space-y-3'>
-          <h3 className='font-medium'>Customer Details</h3>
+          <h3 className='font-medium'>Detalhes do cliente</h3>
           <p>Nome:{user.displayName}</p>
           <p>Email:{user.email}</p>
           <p>User_id:{user.uid}</p>
         </div>
         <div className='md:w-1/2 space-y-3'>
-          <h3 className='font-medium'>Shopping details</h3>
+          <h3 className='font-medium'>Detalhes</h3>
           <p>Total de itens:{cart.length}</p>
           <p>Preço total: R${orderTotal.toFixed(2)}</p>
-          <button className='btn bg-green text-white'>Proceder checkout</button>
+          <button className='btn bg-green text-white'>
+            Proceder com checkout
+          </button>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { FaHeart } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { AuthContext } from '../contexts/AuthProvider'
 
 const Cards = ({ item }) => {

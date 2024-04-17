@@ -13,7 +13,6 @@ const Modal = () => {
   const { signUpWithGmail, login } = useContext(AuthContext)
   const [errorMessage, setErrorMessage] = useState('')
 
-  // redirecting to home page or specifig page
   const location = useLocation()
   const navigate = useNavigate()
   const from = location.state?.from?.pathname || '/'
@@ -21,17 +20,17 @@ const Modal = () => {
   const onSubmit = (data) => {
     const email = data.email
     const password = data.password
-    // console.log(email, password)
+
     login(email, password)
       .then((result) => {
         const user = result.user
-        alert('Login successfull')
+        alert('Login feito com sucesso')
         document.getElementById('my_modal_5').close()
         navigate(from, { replace: true })
       })
       .catch((error) => {
         const errorMessage = error.message
-        setErrorMessage('Provide a correct email and password!')
+        setErrorMessage('Email ou senha incorretos')
       })
   }
 
@@ -40,11 +39,12 @@ const Modal = () => {
     signUpWithGmail()
       .then((result) => {
         const user = result.user
-        alert('Login successfull!')
+        alert('Login feito com sucesso!')
         navigate(from, { replace: true })
       })
       .catch((error) => console.log(error))
   }
+
   return (
     <dialog id='my_modal_5' className='modal modal-middle sm:modal-middle'>
       <div className='modal-box'>
@@ -54,9 +54,8 @@ const Modal = () => {
             className='card-body'
             method='dialog'
           >
-            <h3 className='font-bold text-lg'>Please Login!</h3>
+            <h3 className='font-bold text-lg'>Faça Login</h3>
 
-            {/* email */}
             <div className='form-control'>
               <label className='label'>
                 <span className='label-text'>Email</span>
@@ -69,32 +68,29 @@ const Modal = () => {
               />
             </div>
 
-            {/* password */}
             <div className='form-control'>
               <label className='label'>
-                <span className='label-text'>Password</span>
+                <span className='label-text'>Senha</span>
               </label>
               <input
                 type='password'
-                placeholder='password'
+                placeholder='senha'
                 className='input input-bordered'
                 {...register('password')}
               />
               <label className='label mt-1'>
                 <a href='#' className='label-text-alt link link-hover'>
-                  Forgot password?
+                  Esqueceu a senha?
                 </a>
               </label>
             </div>
 
-            {/* error */}
             {errorMessage ? (
               <p className='text-red text-xs italic'>{errorMessage}</p>
             ) : (
               ''
             )}
 
-            {/* login btn */}
             <div className='form-control mt-4'>
               <input
                 type='submit'
@@ -104,9 +100,9 @@ const Modal = () => {
             </div>
 
             <p className='text-center my-2'>
-              Donot have an account?{' '}
+              Não tem conta?{' '}
               <Link to='/signup' className='underline text-red ml-1'>
-                Signup Now
+                Faça seu cadastro
               </Link>{' '}
             </p>
 
@@ -119,7 +115,6 @@ const Modal = () => {
             </button>
           </form>
 
-          {/* social sign in */}
           <div className='text-center space-x-3 mb-5'>
             <button
               className='btn btn-circle hover:bg-green hover:text-white'

@@ -5,11 +5,12 @@ import Modal from './Modal'
 import { AuthContext } from '../contexts/AuthProvider'
 import Profile from './Profile'
 import { Link } from 'react-router-dom'
+import useCart from '../hooks/useCart'
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false)
 
-  const { user } = useContext(AuthContext)
+  const { user, loading } = useAuth()
   const [cart, refetch] = useCart()
 
   useEffect(() => {
@@ -39,35 +40,35 @@ const Navbar = () => {
           <summary>Menu</summary>
           <ul className='p-2'>
             <li>
-              <a href='/menu'>All</a>
+              <a href='/menu'>Todos</a>
             </li>
             <li>
-              <a>Salad</a>
+              <a>Saladas</a>
             </li>
             <li>
-              <a>Pizza</a>
+              <a>Pizzas</a>
             </li>
           </ul>
         </details>
       </li>
-      <li tabIndex={0}>
+      <li tabIndex={1}>
         <details>
-          <summary>Services</summary>
+          <summary>Serviços</summary>
           <ul className='p-2'>
             <li>
-              <a>Online Order</a>
+              <a>Pedido online</a>
             </li>
             <li>
-              <a>Table Booking</a>
+              <a>Reserva</a>
             </li>
             <li>
-              <a>Order Tracking</a>
+              <a>Acompanhamento de pedidos</a>
             </li>
           </ul>
         </details>
       </li>
       <li>
-        <a>Offers</a>
+        <a>Ofertas</a>
       </li>
     </>
   )
