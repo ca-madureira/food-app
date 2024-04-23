@@ -43,7 +43,7 @@ const UpdateProfile = () => {
             <input
               {...register('name')}
               type='text'
-              placeholder='your name'
+              placeholder='seu nome'
               className='input input-bordered'
               required
             />
@@ -56,7 +56,7 @@ const UpdateProfile = () => {
             <input
               type='text'
               {...register('photoURL')}
-              placeholder='photoURL'
+              placeholder='imagem'
               className='input input-bordered'
               required
             />

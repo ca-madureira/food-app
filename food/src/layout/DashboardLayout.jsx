@@ -7,6 +7,8 @@ import { FaPlusCircle } from 'react-icons/fa'
 import { FaEdit } from 'react-icons/fa'
 import { FaRegUser } from 'react-icons/fa'
 import { FaCartShopping } from 'react-icons/fa6'
+import useAuth from '../hooks/useAuth'
+import Login from '../components/Login'
 
 import logo from '/logo.png'
 import useAdmin from '../hooks/useAdmin'
@@ -17,6 +19,12 @@ const sharedLinks = (
       <Link to='/'>
         <MdDashboard />
         Home
+      </Link>
+    </li>
+    <li>
+      <Link to='/menu'>
+        <FaCartShopping />
+        Menu
       </Link>
     </li>
     <li>
@@ -34,7 +42,6 @@ const sharedLinks = (
   </>
 )
 const DashboardLayout = () => {
-  const [loading] = useAuth()
   const [isAdmin, isAdminLoading] = useAdmin()
   return (
     <div>
@@ -86,13 +93,13 @@ const DashboardLayout = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to='/dashboard'>
+                  <Link to='/dashboard/add-menu'>
                     <FaPlusCircle />
                     Add Menu
                   </Link>
                 </li>
                 <li>
-                  <Link to='/dashboard'>
+                  <Link to='/dashboard/manage-items'>
                     <FaEdit />
                     Manage Items
                   </Link>

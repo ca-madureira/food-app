@@ -38,7 +38,7 @@ const Signup = () => {
           }
           axiosPublic.post('/users', userInfor).then((response) => {
             // console.log(response);
-            alert('Signin successful!')
+            alert('Logado com sucesso')
             navigate(from, { replace: true })
           })
         })
@@ -71,15 +71,15 @@ const Signup = () => {
     <div className='max-w-md bg-white shadow w-full mx-auto flex items-center justify-center my-20'>
       <div className='mb-5'>
         <form className='card-body' onSubmit={handleSubmit(onSubmit)}>
-          <h3 className='font-bold text-lg'>Please Create An Account!</h3>
+          <h3 className='font-bold text-lg'>Criar conta</h3>
           {/* name */}
           <div className='form-control'>
             <label className='label'>
-              <span className='label-text'>Name</span>
+              <span className='label-text'>Nome</span>
             </label>
             <input
               type='name'
-              placeholder='Your name'
+              placeholder='Seu nome'
               className='input input-bordered'
               {...register('name')}
             />
@@ -88,11 +88,11 @@ const Signup = () => {
           {/* email */}
           <div className='form-control'>
             <label className='label'>
-              <span className='label-text'>Email</span>
+              <span className='label-text'>E-mail</span>
             </label>
             <input
               type='email'
-              placeholder='email'
+              placeholder='E-mail'
               className='input input-bordered'
               {...register('email')}
             />
@@ -101,17 +101,17 @@ const Signup = () => {
           {/* password */}
           <div className='form-control'>
             <label className='label'>
-              <span className='label-text'>Password</span>
+              <span className='label-text'>Senha</span>
             </label>
             <input
               type='password'
-              placeholder='password'
+              placeholder='Senha'
               className='input input-bordered'
               {...register('password')}
             />
             <label className='label'>
               <a href='#' className='label-text-alt link link-hover mt-2'>
-                Forgot password?
+                Esqueceu senha?
               </a>
             </label>
           </div>
@@ -124,14 +124,14 @@ const Signup = () => {
             <input
               type='submit'
               className='btn bg-green text-white'
-              value='Sign up'
+              value='Criar'
             />
           </div>
 
           <div className='text-center my-2'>
-            Have an account?
+            Já tem conta?
             <Link to='/login'>
-              <button className='ml-2 underline'>Login here</button>
+              <button className='ml-2 underline'>Faça login</button>
             </Link>
           </div>
         </form>

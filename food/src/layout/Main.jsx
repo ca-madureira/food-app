@@ -1,6 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 import '../App.css'
 
 const Main = () => {
@@ -10,7 +11,7 @@ const Main = () => {
       <div className='min-h-screen'>
         <Outlet />
       </div>
-      <footer>Footer</footer>
+      <Footer />
     </div>
   )
 }

@@ -7,25 +7,27 @@ const Footer = () => {
         <aside>
           <img src='/logo.png' alt='' />
           <p className='my-3 md:w-40'>
-            Savor the artistry where every dish is a culinary masterpiece
+            Saboreie a arte onde cada prato é uma obra-prima culinária
           </p>
         </aside>
-        <nav>
-          <header className='footer-title text-black'>Useful links</header>
-          <a className='link link-hover'>About us</a>
-          <a className='link link-hover'>Events</a>
+        <nav className=''>
+          <header className='footer-title text-black'>Links úteis</header>
+          <a className='link link-hover'>
+            Sobre nós<s></s>
+          </a>
+          <a className='link link-hover'>Eventos</a>
           <a className='link link-hover'>Blogs</a>
           <a className='link link-hover'>FAQ</a>
         </nav>
         <nav>
-          <header className='footer-title'>Main Menu</header>
+          <header className='footer-title'>Menu Principal</header>
           <a className='link link-hover'>Home</a>
-          <a className='link link-hover'>Offers</a>
+          <a className='link link-hover'>Ofertas</a>
           <a className='link link-hover'>Menus</a>
-          <a className='link link-hover'>Reservation</a>
+          <a className='link link-hover'>Reserva</a>
         </nav>
         <nav>
-          <header className='footer-title'>Contact Us</header>
+          <header className='footer-title'>Contate-nos</header>
           <a className='link link-hover'>example@email.com</a>
           <a className='link link-hover'>+64 958 248 966</a>
           <a className='link link-hover'>Social media</a>
@@ -34,7 +36,7 @@ const Footer = () => {
       <hr />
       <footer className='footer items-center xl:px-24 px-4 py-4 mt-2'>
         <aside className='items-center grid-flow-col'>
-          <p>Copyright © 2023 - All right reserved</p>
+          <p>Copyright © 2023 - Direitos todos reservados</p>
         </aside>
         <nav className='grid-flow-col gap-4 md:place-self-center md:justify-self-end'>
           <a>
